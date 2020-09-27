@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace EFCoreMEmoryLeak
 {
@@ -13,7 +14,7 @@ namespace EFCoreMEmoryLeak
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Entity>().HasData(new Entity { Id = 1, Name = "Name" });
+            //modelBuilder.Entity<Entity>().HasData(new Entity { Id = 1, Name = "Name" });
         }
     }
 }

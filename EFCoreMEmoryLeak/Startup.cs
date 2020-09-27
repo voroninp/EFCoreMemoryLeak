@@ -38,6 +38,7 @@ namespace EFCoreMEmoryLeak
             {
                 ctx.Database.EnsureDeleted();
                 ctx.Database.EnsureCreated();
+                ctx.ChangeTracker.Entries().ToList().ForEach(_ => _.State = EntityState.Detached);
             }
 
             if (env.IsDevelopment())
